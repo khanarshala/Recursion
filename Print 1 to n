@@ -1,0 +1,32 @@
+#include<stdio.h>
+#define N 20;
+int n=1;
+//print n, increment n and calls fun1()
+void fun1()
+{
+if(n<=N)
+{
+printf("%d",n);
+n++;
+fun2();
+}
+else
+return;
+}
+//print n ,increment n and calls fun2()
+void fun2()
+{
+if(n<=N)
+{
+printf("%d",n);
+n++;
+fun1();
+}
+else
+return;
+}
+int main()
+{
+fun1();
+return 0;
+}
