@@ -1,0 +1,20 @@
+#include<stdio.h>
+void PrintNatralNumbers(int lowerLimit, int upperLimit);
+int main();
+{
+int lowerLimit, int upperLimit;
+printf("Enter lowerLimit");
+scanf("%d", &lowerLimit);
+printf("Enter upperLimit");
+scanf("%d", &upperLimit);
+printf("All natural numbers from %d to %d are:",lowerLimit, upperLimit);
+PrintNaturalNumbers(lowerLimit, upperLimit);
+return 0;
+}
+void PrintNaturalNumbers(int lowerLimit, int upperLimit)
+{
+if(lowerLimit>upperLimit)
+retun;
+printf("%d", lowerLimit);
+PrintNaturalNumbers(lowerLimit+1, upperLimit);
+}
