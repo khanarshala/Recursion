@@ -1,0 +1,35 @@
+class Solution {
+public:
+    int len;
+    vector<string> ans;
+    void solve(string S, int len, int start, string temp){
+        if(temp.length() == len){
+            ans.push_back(temp);
+            return;
+        }
+        
+        for(int i = start; i < len; i++){
+            if(isalpha(S[i])){
+                
+                temp.push_back(tolower(S[i]));
+                solve(S, len, i+1, temp);
+                temp.pop_back();
+                
+                temp.push_back(toupper(S[i]));
+                solve(S, len, i+1, temp);
+                temp.pop_back();
+            }
+            else{
+                temp.push_back(S[i]);
+                solve(S, len, i+1, temp);
+                temp.pop_back();
+            }
+        }
+    }
+    vector<string> letterCasePermutation(string S) {
+        len = S.length();
+        string temp = "";
+        solve(S, len, 0, temp);
+        return ans;
+    }
+};
